@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "@/context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ const fetchWeather = async (setResponse) => {
 
 export default function Home() {
   const [test, setTest] = useState([]);
+  const { state, dispatch } = useContext(Context);
 
   useEffect(() => {
     fetchWeather(setTest);

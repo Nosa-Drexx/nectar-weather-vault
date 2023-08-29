@@ -1,3 +1,4 @@
+import { ContextProvider } from "@/context";
 import "./index.scss";
 
 export default function RootLayout({ children }) {
@@ -8,7 +9,9 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <ContextProvider>
+        <body>{children}</body>
+      </ContextProvider>
     </html>
   );
 }
