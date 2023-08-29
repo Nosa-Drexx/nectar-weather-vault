@@ -1,10 +1,26 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "./page.module.css";
+import { useEffect, useState } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
+
+const fetchWeather = async (setResponse) => {
+  const data = await fetch(
+    `${process.env.API_ENDPOINT}/current.json?key=${process.env.WEATHER_KEY}&q=London&aqi=no`
+  );
+  const response = await data.json();
+  console.log(response);
+  setResponse(response);
+};
 
 export default function Home() {
+  const [test, setTest] = useState([]);
+
+  useEffect(() => {
+    fetchWeather(setTest);
+  }, []);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -18,7 +34,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -87,5 +103,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
