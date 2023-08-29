@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const fetchWeather = async (setResponse) => {
   const data = await fetch(
-    `${process.env.API_ENDPOINT}/current.json?key=${process.env.WEATHER_KEY}&q=London&aqi=no`
+    `${process.env.API_ENDPOINT}/current.json?key=${process.env.WEATHER_KEY}&q=London&aqi=no`,
   );
   const response = await data.json();
   console.log(response);
@@ -20,5 +20,5 @@ export default function Home() {
   useEffect(() => {
     fetchWeather(setTest);
   }, []);
-  return <h1 className="test-h1">Hello</h1>;
+  return <main className="test-h1">Hello</main>;
 }

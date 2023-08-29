@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write \"src/**/*.{js, jsx}\"",
+    "prettier:check": "prettier --check \"src/**/*.{js, jsx}\""
   },
   "dependencies": {
     "@next/font": "13.4.19",
