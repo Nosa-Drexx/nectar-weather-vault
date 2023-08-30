@@ -24,7 +24,6 @@ const rootReducer = (state, action) => {
         },
       };
     case "LOCATIONUDPATE": {
-      console.log(action.payload);
       return {
         ...state,
         user: { ...state.user, locationSet: action.payload.location },
