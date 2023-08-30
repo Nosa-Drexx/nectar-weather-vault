@@ -1,0 +1,11 @@
+.forcast-section {
+  @media (min-height: 767px) {
+    margin-top: 2rem;
+  }
+  @media (min-height: 800px) {
+    margin-top: calc(100vh - 90vh);
+  }
+  @media (min-height: 1000px) {
+    margin-top: 20vh;
+  }
+}

@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.select-location {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &-options {
+    @include Button();
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+    transition: transform 0.3s;
+  }
+  &-options:hover {
+    transform: scale(1.1);
+  }
+}

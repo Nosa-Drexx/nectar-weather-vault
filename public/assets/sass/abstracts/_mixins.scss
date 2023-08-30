@@ -1,0 +1,11 @@
+@mixin Link($color: white, $decoration: none) {
+  color: $color;
+  text-decoration: $decoration;
+}
+
+@mixin Button($border: none, $bg: none, $width: 100%, $cursor: pointer) {
+  border: $border;
+  background: $bg;
+  width: $width;
+  cursor: $cursor;
+}

@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.weather-bg {
+  background-image: url("../../img/banners/weather-blur-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100dvw;
+  height: 100vh;
+  margin: 0px;
+  padding: 3rem 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

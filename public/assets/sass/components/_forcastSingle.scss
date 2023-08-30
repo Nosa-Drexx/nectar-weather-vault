@@ -1,0 +1,34 @@
+.forcast-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0rem;
+  justify-content: center;
+  max-width: 150px;
+  height: 200px;
+  border-radius: 15px;
+  background-image: url("../../img/banners/weather-blur-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem;
+}
+.forcast-condition {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.forcast-day {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.current-day-forcast {
+  border: 2px solid white;
+}

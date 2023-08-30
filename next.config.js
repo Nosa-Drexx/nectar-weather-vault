@@ -7,6 +7,9 @@ const nextConfig = {
     API_ENDPOINT: process.env.API_ENDPOINT,
     WEATHER_KEY: process.env.WEATHER_KEY,
   },
+  images: {
+    domains: ["cdn.weatherapi.com"],
+  },
 };
 
 module.exports = nextConfig;
