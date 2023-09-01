@@ -1,0 +1,32 @@
+{
+  "theme_color": "#1044e0",
+  "background_color": "#10e0cf",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Nectar-Weather-Vault",
+  "short_name": "NWV",
+  "description": "A Vault in disguise of a Weather Application to save any sort of media",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

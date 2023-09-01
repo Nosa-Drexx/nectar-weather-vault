@@ -1,18 +1,16 @@
 "use client";
 import { Context } from "@/context";
 import React, { useContext, useEffect, useState } from "react";
+import { Country, State, City } from "country-state-city";
+
 // import { useQuery } from "react-query";
 
 const SelectState = ({ clickEvent, ...config }) => {
   const { state, dispatch } = useContext(Context);
   const { user } = state;
   const { currentWeather, locationData, locationSet } = user;
-  const [allCountries, setAllCountries] = useState([
-    "Lagos, Nigeria",
-    "Abuja, Nigeria",
-    "Edo, Nigeria",
-    "Benin, Nigeria",
-  ]);
+
+  const [allCountries, setAllCountries] = useState(State.getAllStates());
 
   function handleClick(value) {
     dispatch({ type: "LOCATIONUDPATE", payload: { location: value } });
@@ -61,7 +59,10 @@ const SelectState = ({ clickEvent, ...config }) => {
           handleLocation();
         }}
       >
-        Use Current Location
+        Use Current Location{" "}
+        <span style={{ color: "black", fontSize: "0.9rem" }}>
+          (Requires location access)
+        </span>
       </button>
 
       {/* Help with auto keys  */}
@@ -69,8 +70,8 @@ const SelectState = ({ clickEvent, ...config }) => {
         allCountries
           .sort((a, b) => {
             //sort by name
-            const nameA = a.toUpperCase(); // ignore upper and lowercase
-            const nameB = b.toUpperCase(); // ignore upper and lowercase
+            const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.name.toUpperCase(); // ignore upper and lowercase
             if (nameA < nameB) {
               return -1;
             }
@@ -85,12 +86,12 @@ const SelectState = ({ clickEvent, ...config }) => {
             return (
               <button
                 className="select-location-options"
-                value={coun}
+                value={coun.name}
                 onClick={(evt) => {
                   handleClick(evt.target.value);
                 }}
               >
-                {coun}
+                {coun.name}
               </button>
             );
           }),
