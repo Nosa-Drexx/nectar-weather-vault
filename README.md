@@ -1,4 +1,4 @@
-A Vault to store any multimedia document disguised as a Weather App Leveraging the power of PWA, Service Workers and NextJS 
+# A Vault to store any multimedia document disguised as a Weather App Leveraging the power of PWA, Service Workers and NextJS 
 
 ## Getting Started
 
