@@ -7,7 +7,7 @@ import { Context } from "@/context";
 const HomePage = () => {
   const { state, dispatch } = useContext(Context);
   const successCallback = (position) => {
-    console.log(position.coords);
+    // console.log(position.coords);
     dispatch({
       type: "LOCATIONUDPATE",
       payload: {
@@ -17,7 +17,7 @@ const HomePage = () => {
   };
 
   const errorCallback = (error) => {
-    console.log(error);
+    // console.log(error);
   };
 
   useEffect(() => {

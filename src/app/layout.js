@@ -3,7 +3,7 @@ import "./index.scss";
 import { Metadata } from "next";
 
 export const metadata = {
-  title: "jamit test pwa",
+  title: "nectar-weather-vault",
   description: "test",
   manifest: "/manifest.json",
   icons: { apple: "/icon.png" },
