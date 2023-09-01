@@ -4,10 +4,11 @@ import { Metadata } from "next";
 
 export const metadata = {
   title: "nectar-weather-vault",
-  description: "test",
+  description:
+    "A Vault to store multimedia documents disguised as a Weather APP",
   manifest: "/manifest.json",
   icons: { apple: "/icon.png" },
-  themeColor: "#fff",
+  themeColor: "#3281a8",
 };
 
 export default function RootLayout({ children }) {
