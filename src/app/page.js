@@ -5,28 +5,62 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from "@/context";
 import WeatherLayout from "@/component/Layout/weather-layout";
 import HomePage from "@/component/weatherPages/homePage";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// const fetchWeather = async (setResponse) => {
-//   const data = await fetch(
-//     `${process.env.API_ENDPOINT}/current.json?key=${process.env.WEATHER_KEY}&q=London&aqi=no`,
-//   );
-//   const response = await data.json();
-//   console.log(response);
-//   setResponse(response);
-// };
+import OffLinePage from "@/component/_offline";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
-  // const [test, setTest] = useState([]);
-  // const { state, dispatch } = useContext(Context);
+  let isOnline;
+  const [online, setOnline] = useState(true);
+  const [showOnlineToast, setShowOnlineToast] = useState(null);
 
-  // useEffect(() => {
-  //   fetchWeather(setTest);
-  // }, []);
+  //State updates when user is either offline or online
+  useEffect(() => {
+    isOnline = "onLine" in navigator ? navigator.onLine : true;
+    setOnline(isOnline);
+    window.addEventListener("online", () => {
+      isOnline = true;
+      setOnline(isOnline);
+      setShowOnlineToast(true);
+    });
+    window.addEventListener("offline", () => {
+      isOnline = false;
+      setOnline(isOnline);
+      setShowOnlineToast(false);
+    });
+  }, []);
+
+  //Toast for when users is back online
+  useEffect(() => {
+    if (online && showOnlineToast) {
+      toast(
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "1.1rem",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          Welcome back online!
+          <p>
+            <span style={{ fontSize: "50px" }}>&#127882;</span>
+          </p>
+        </div>,
+      );
+    }
+  }, [online, showOnlineToast]);
+
   return (
-    <WeatherLayout>
-      <HomePage />
-    </WeatherLayout>
+    <>
+      <ToastContainer position="top-center" />
+      {online ? (
+        <WeatherLayout>
+          <HomePage />
+        </WeatherLayout>
+      ) : (
+        <OffLinePage />
+      )}
+    </>
   );
 }

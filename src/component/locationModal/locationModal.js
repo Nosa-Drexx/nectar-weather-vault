@@ -30,6 +30,7 @@ const LocationModal = ({ modalToggle }) => {
             border: "none",
             color: "white",
             fontWeight: "bold",
+            cursor: "pointer",
           }}
           className="close-modal"
         >
