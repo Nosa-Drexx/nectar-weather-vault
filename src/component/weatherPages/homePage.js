@@ -29,7 +29,7 @@ const HomePage = () => {
 
   return (
     <section
-      style={{ display: "flex", flexFlow: "column nowrap", gap: "2rem" }}
+      style={{ display: "flex", flexFlow: "column nowrap", gap: "1rem" }}
     >
       <div style={{ display: "none" }}>
         <Image
