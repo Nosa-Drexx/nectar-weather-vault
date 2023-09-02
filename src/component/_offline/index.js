@@ -30,6 +30,7 @@ export default function OffLinePage() {
             height={250}
             alt="nectar-logo"
             priority={true}
+            style={{ borderRadius: "15px" }}
           />
         </div>
         <div
