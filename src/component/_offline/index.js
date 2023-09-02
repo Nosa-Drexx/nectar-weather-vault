@@ -20,6 +20,7 @@ export default function OffLinePage() {
             width={70}
             height={65}
             alt="nectar-logo"
+            priority={true}
           />
         </div>
         <div>
@@ -28,6 +29,7 @@ export default function OffLinePage() {
             width={250}
             height={250}
             alt="nectar-logo"
+            priority={true}
           />
         </div>
         <div
